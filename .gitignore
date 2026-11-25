@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Local secrets and Streamlit configuration
+.env
+.streamlit/secrets.toml
+
+# Runtime data: never commit user-uploaded records or local databases
+uploads/
+data/*.db
+data/*.db-*
+*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
