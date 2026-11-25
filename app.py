@@ -8,7 +8,18 @@ if 'db_initialized' not in st.session_state:
     seed()
     st.session_state.db_initialized=True
 st.set_page_config(page_title='Land Stack',layout='wide')
-st.markdown('''<style>.stApp{background:#f5f8fb}.hero{background:#073b4c;color:white;padding:1.2rem;border-radius:12px}.badge{padding:.15rem .5rem;border-radius:8px;background:#d8f3dc}</style>''',unsafe_allow_html=True)
+st.markdown('''<style>
+/* Explicit colors prevent a browser's retained dark-theme preference from making
+   light-background profile content appear white. */
+[data-testid="stAppViewContainer"], [data-testid="stAppViewContainer"] .main {background:#f5f8fb;color:#172b4d}
+[data-testid="stAppViewContainer"] h1, [data-testid="stAppViewContainer"] h2, [data-testid="stAppViewContainer"] h3,
+[data-testid="stAppViewContainer"] p, [data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] [data-testid="stMetricLabel"], [data-testid="stAppViewContainer"] [data-testid="stMetricValue"],
+[data-testid="stAppViewContainer"] [data-testid="stCaptionContainer"] {color:#172b4d!important}
+.hero,.hero h1,.hero p{background:#073b4c;color:#fff!important;padding:1.2rem;border-radius:12px}
+.hero h1,.hero p{padding:0;margin:0}.hero p{margin-top:.35rem}
+.badge{padding:.15rem .5rem;border-radius:8px;background:#d8f3dc;color:#172b4d}
+</style>''',unsafe_allow_html=True)
 if 'user' not in st.session_state:
  st.markdown('<div class="hero"><h1>Centralized Land Information Platform</h1><p>Local hackathon prototype · mock departmental data</p></div>',unsafe_allow_html=True)
  with st.form('login'):
